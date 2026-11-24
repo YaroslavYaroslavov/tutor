@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Юпатов Ярослав Владимирович — репетитор по web-разработке</title>
+    <meta
+      name="description"
+      content="Репетитор по web-разработке: HTML, CSS, JS, React. Алгоритмика, робототехника на Arduino. Разработчик с 5-летним стажем. Пробное занятие бесплатно."
+    />
+    <style>
+      :root {
+        --bg: #0e1117;
+        --bg-soft: #151a23;
+        --card: #1a202b;
+        --line: #2a3242;
+        --text: #e8ecf2;
+        --muted: #9aa6b8;
+        --accent: #c9a227;
+        --accent-soft: rgba(201, 162, 39, 0.12);
+        --radius: 16px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        padding: 88px 0;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      /* ---------- Header ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(14, 17, 23, 0.82);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 17px;
+        letter-spacing: 0.04em;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .nav-cta {
+        background: var(--accent);
+        color: #12151b;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);
+      }
+      @media (max-width: 760px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        padding: 110px 0 96px;
+        background:
+          radial-gradient(
+            900px 420px at 78% 0%,
+            rgba(201, 162, 39, 0.13),
+            transparent 60%
+          ),
+          radial-gradient(
+            700px 400px at 10% 30%,
+            rgba(60, 110, 200, 0.1),
+            transparent 60%
+          );
+        border-bottom: 1px solid var(--line);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 0.9fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 13px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 22px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: var(--accent);
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4.4vw, 50px);
+        margin-bottom: 22px;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--accent);
+      }
+      .hero p.lead {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 540px;
+        margin-bottom: 34px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 14px 26px;
+        border-radius: 11px;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #12151b;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(201, 162, 39, 0.3);
+      }
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--text);
+        background: transparent;
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .hero-badges {
+        display: flex;
+        gap: 26px;
+        flex-wrap: wrap;
+        margin-top: 44px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+      }
+      .badge {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .badge b {
+        display: block;
+        font-size: 22px;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+
+      .hero-card {
+        background: linear-gradient(160deg, var(--card), var(--bg-soft));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 30px;
+      }
+      .hero-card .avatar {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        border: 1px solid rgba(201, 162, 39, 0.4);
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        font-size: 24px;
+        color: var(--accent);
+        margin-bottom: 18px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .hero-card h3 {
+        font-size: 17px;
+        margin-bottom: 4px;
+      }
+      .hero-card .role {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+      .hero-card ul {
+        list-style: none;
+        display: grid;
+        gap: 11px;
+      }
+      .hero-card li {
+        display: flex;
+        gap: 11px;
+        font-size: 14.5px;
+        color: var(--muted);
+      }
+      .hero-card li svg {
+        flex: 0 0 18px;
+        margin-top: 3px;
+        color: var(--accent);
+      }
+
+      /* ---------- Section headings ---------- */
+      .sec-head {
+        margin-bottom: 52px;
+        max-width: 640px;
+      }
+      .sec-head h2 {
+        font-size: clamp(26px, 3.2vw, 36px);
+        margin-bottom: 14px;
+      }
+      .sec-head p {
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      /* ---------- Courses ---------- */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 30px;
+        transition:
+          border-color 0.25s,
+          transform 0.25s;
+      }
+      .card:hover {
+        border-color: rgba(201, 162, 39, 0.45);
+        transform: translateY(-3px);
+      }
+      .card .icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: var(--accent-soft);
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+      .card h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .tag {
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        padding: 5px 12px;
+        border-radius: 7px;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      /* ---------- About ---------- */
+      .about {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .about p {
+        color: var(--muted);
+        font-size: 16.5px;
+        margin-bottom: 18px;
+      }
+      .about p strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .stat {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px 24px;
+      }
+      .stat b {
+        display: block;
+        font-size: 34px;
+        letter-spacing: -0.03em;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+      .stat span {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* ---------- Pricing ---------- */
+      .price-wrap {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+      .price-main {
+        background: linear-gradient(160deg, var(--card), var(--bg-soft));
+        border: 1px solid rgba(201, 162, 39, 0.4);
+        border-radius: var(--radius);
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      .price-main::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(
+          circle,
+          rgba(201, 162, 39, 0.18),
+          transparent 70%
+        );
+      }
+      .price-main .label {
+        font-size: 13px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .price-main .amount {
+        font-size: 52px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .price-main .amount small {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--muted);
+        letter-spacing: 0;
+      }
+      .price-main .sub {
+        color: var(--muted);
+        margin: 14px 0 26px;
+        font-size: 15.5px;
+      }
+      .price-list {
+        list-style: none;
+        display: grid;
+        gap: 13px;
+      }
+      .price-list li {
+        display: flex;
+        gap: 11px;
+        font-size: 15px;
+      }
+      .price-list svg {
+        flex: 0 0 18px;
+        margin-top: 3px;
+        color: var(--accent);
+      }
+
+      .price-free {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .price-free .label {
+        font-size: 13px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .price-free .amount {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin-bottom: 14px;
+      }
+      .price-free p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .req {
+        margin-top: 24px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px 26px;
+      }
+      .req-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14.5px;
+        color: var(--muted);
+      }
+      .req-item svg {
+        color: var(--accent);
+      }
+
+      /* ---------- Contact ---------- */
+      .contact {
+        text-align: center;
+      }
+      .contact h2 {
+        font-size: clamp(28px, 3.6vw, 40px);
+        margin-bottom: 16px;
+      }
+      .contact p {
+        color: var(--muted);
+        font-size: 17px;
+        max-width: 520px;
+        margin: 0 auto 38px;
+      }
+      .contact-box {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 38px 54px;
+      }
+      .contact-box .name {
+        font-size: 13px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .contact-box .full {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .contact-box a.mail {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+      }
+      .contact-box a.mail:hover {
+        text-decoration: underline;
+      }
+      .contact-actions {
+        display: flex;
+        gap: 14px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 30px 0;
+        font-size: 14px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* ---------- Reveal animation ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .contact-box .phone {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.2s;
+      }
+      .contact-box .phone:hover {
+        color: var(--accent);
+      }
+      .contact-box .telegram {
+        color: #4ea8de;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.2s;
+      }
+      .contact-box .telegram:hover {
+        color: #7cc4f0;
+      }
+      /* ---------- Responsive ---------- */
+      @media (max-width: 900px) {
+        .hero-grid,
+        .about-grid,
+        .price-wrap {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .hero {
+          padding: 72px 0 64px;
+        }
+        .contact-box {
+          padding: 30px 26px;
+          width: 100%;
+        }
+      }
+      @media (max-width: 480px) {
+        .stats {
+          grid-template-columns: 1fr;
+        }
+        .hero-badges {
+          gap: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">ЯРОСЛАВ <span>ЮПАТОВ</span></div>
+        <nav class="nav-links">
+          <a href="#courses">Курсы</a>
+          <a href="#about">Обо мне</a>
+          <a href="#pricing">Стоимость</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+        <a href="#contact" class="nav-cta">Записаться</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Репетитор по web-разработке</div>
+          <h1>
+            Научу создавать сайты и приложения —
+            <em>с нуля до уверенного уровня</em>
+          </h1>
+          <p class="lead">
+            HTML, CSS, JavaScript и React. Плюс алгоритмика и робототехника на
+            Arduino. Практикующий разработчик с 5-летним стажем — объясняю
+            просто, по-настоящему и с реальными проектами.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Бесплатное пробное занятие
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="#courses" class="btn btn-ghost">Смотреть программы</a>
+          </div>
+          <div class="hero-badges">
+            <div class="badge"><b>5 лет</b>в разработке</div>
+            <div class="badge"><b>4 года</b>работы с детьми</div>
+            <div class="badge"><b>Enterprise</b>уровень компании</div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <img class="avatar" src="./photo_2026-10-30_10-48-45.jpg" alt="ЮЯ" />
+          <h3>Юпатов Ярослав Владимирович</h3>
+          <div class="role">Разработчик · Репетитор</div>
+          <ul>
+            <li>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Практикующий разработчик в enterprise-компании
+            </li>
+            <li>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Индивидуальный подход к каждому ученику
+            </li>
+            <li>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Только актуальный стек и практика
+            </li>
+            <li>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Занятия онлайн, 60 минут
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Чему я обучаю</h2>
+          <p>
+            Программы для начинающих и тех, кто хочет углубиться. Всё — с
+            практикой и реальными задачами.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <div class="icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+              </svg>
+            </div>
+            <h3>Основы web: HTML и CSS</h3>
+            <p>
+              Семантическая разметка, современная вёрстка, Flexbox и Grid,
+              адаптивность под мобильные устройства. Соберём настоящие страницы
+              с нуля.
+            </p>
+            <div class="tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span
+              ><span class="tag">Адаптив</span
+              ><span class="tag">Flexbox / Grid</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"
+                />
+              </svg>
+            </div>
+            <h3>JavaScript</h3>
+            <p>
+              От синтаксиса и DOM до асинхронности и работы с API. Учимся писать
+              живой интерактив и строить логику приложений.
+            </p>
+            <div class="tags">
+              <span class="tag">ES6+</span><span class="tag">DOM</span
+              ><span class="tag">Async / await</span
+              ><span class="tag">API</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="2" />
+                <ellipse cx="12" cy="12" rx="10" ry="4.5" />
+                <ellipse
+                  cx="12"
+                  cy="12"
+                  rx="10"
+                  ry="4.5"
+                  transform="rotate(60 12 12)"
+                />
+                <ellipse
+                  cx="12"
+                  cy="12"
+                  rx="10"
+                  ry="4.5"
+                  transform="rotate(120 12 12)"
+                />
+              </svg>
+            </div>
+            <h3>React</h3>
+            <p>
+              Компонентный подход, хуки, состояние и роутинг. Разберёмся, как
+              строятся современные интерфейсы, и сделаем собственное приложение.
+            </p>
+            <div class="tags">
+              <span class="tag">Hooks</span><span class="tag">State</span
+              ><span class="tag">Router</span
+              ><span class="tag">Компоненты</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <path
+                  d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"
+                />
+              </svg>
+            </div>
+            <h3>Дополнительно</h3>
+            <p>
+              Алгоритмические и логические основы — база для любого
+              программиста. Робототехника: проектирование и программирование на
+              Arduino.
+            </p>
+            <div class="tags">
+              <span class="tag">Алгоритмы</span><span class="tag">Логика</span
+              ><span class="tag">Arduino</span
+              ><span class="tag">Робототехника</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="eyebrow">Обо мне</div>
+          <h2 style="font-size: clamp(26px, 3.2vw, 36px); margin-bottom: 24px">
+            Практик, который умеет объяснять
+          </h2>
+          <p>
+            Меня зовут <strong>Юпатов Ярослав Владимирович</strong>. Я
+            разработчик с <strong>5-летним стажем</strong> и работаю в
+            IT-компании размера <strong>enterprise</strong> — то есть ежедневно
+            решаю задачи, с которыми сталкиваются в реальной индустрии.
+          </p>
+          <p>
+            При этом у меня <strong>4 года опыта работы с детьми</strong>. Это
+            значит, что я не просто знаю предмет — я умею доносить его понятно,
+            спокойно и увлекательно, подстраиваясь под темп и характер ученика.
+          </p>
+          <p>
+            На занятиях мы не зубрим теорию ради теории: каждый ученик пишет
+            код, собирает проекты и видит результат своими глазами. Это лучший
+            способ полюбить программирование.
+          </p>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><b>5</b><span>лет в разработке</span></div>
+          <div class="stat"><b>4</b><span>года работы с детьми</span></div>
+          <div class="stat"><b>4+</b><span>направления обучения</span></div>
+          <div class="stat"><b>0 ₽</b><span>пробное занятие</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Стоимость и формат</h2>
+          <p>
+            Прозрачные условия без скрытых платежей. Первое занятие — бесплатно,
+            чтобы вы убедились, что формат подходит.
+          </p>
+        </div>
+
+        <div class="price-wrap">
+          <div class="price-main reveal">
+            <div class="label">Занятие</div>
+            <div class="amount">40 <small>рублей / час</small></div>
+            <div class="sub">
+              Индивидуальное онлайн-занятие продолжительностью 60 минут.
+            </div>
+            <ul class="price-list">
+              <li>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Длительность занятия — 1 час
+              </li>
+              <li>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Индивидуальная программа под ваш уровень
+              </li>
+              <li>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Практика на каждом занятии
+              </li>
+              <li>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Обратная связь и разбор домашних заданий
+              </li>
+            </ul>
+          </div>
+
+          <div class="price-free reveal">
+            <div class="label">Старт</div>
+            <div class="amount">Бесплатно</div>
+            <p>
+              Пробное занятие — бесплатно. Познакомимся, определим уровень и
+              составим план обучения.
+            </p>
+          </div>
+        </div>
+
+        <div class="req reveal">
+          <div class="req-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+            Компьютер
+          </div>
+          <div class="req-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z" />
+              <path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3" />
+            </svg>
+            Микрофон
+          </div>
+          <div class="req-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M5 12.55a11 11 0 0114 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"
+              />
+            </svg>
+            Интернет
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="reveal">
+          <h2>Запишитесь на бесплатное пробное</h2>
+          <p>
+            Напишите мне — обсудим цели, уровень и удобное время. Первое занятие
+            бесплатно.
+          </p>
+
+          <div class="contact-box">
+            <div class="name">Репетитор</div>
+            <div class="full">Юпатов Ярослав Владимирович</div>
+            <a class="phone" href="tel:+375297147477">+375 29 714-74-77</a>
+            <a
+              class="telegram"
+              href="https://t.me/jaroslawik"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Telegram: @jaroslawik</a
+            >
+
+            <div class="contact-actions">
+              <a
+                href="https://t.me/jaroslawik"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+                >Написать в Telegram</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 10px;
+          width: 100%;
+        "
+      >
+        <span>© 2026 Юпатов Ярослав Владимирович</span>
+        <span>Репетитор по web-разработке · Онлайн</span>
+      </div>
+    </footer>
+
+    <script>
+      // Плавное появление блоков при прокрутке
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
